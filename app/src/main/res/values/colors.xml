@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#16a085</color>
+    <color name="colorPrimaryDark">#138a73</color>
+    <color name="colorPrimaryLight">#DCEDC8</color>
+    <color name="colorAccent">#FF5252</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="icons">#212121</color>
+    <color name="divider">#bdbdbd</color>
+    <color name="shadown_color">#66000000</color>
+    <color name="ripple_color">#99FFFFFF</color>
+    <color name="editColor">#9907A9EC</color>
+    <color name="deleteColor">#99F7081A</color>
+</resources>

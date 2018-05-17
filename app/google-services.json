@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "333934092068",
+    "firebase_url": "https://finanzlymobile.firebaseio.com",
+    "project_id": "finanzlymobile",
+    "storage_bucket": "finanzlymobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333934092068:android:b9e4b9b0a906cb6c",
+        "android_client_info": {
+          "package_name": "com.finanzlymobile.finanzlymobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333934092068-a9rpgpq6prg2fdhq9rrbqk59th1nn43d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finanzlymobile.finanzlymobile",
+            "certificate_hash": "4926caa21bffb8f53144cd5ac532fafcf118ae45"
+          }
+        },
+        {
+          "client_id": "333934092068-07vsnr3cunrm81985abkcf3k6mhq5o8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApHfIutq3V1DdE1zKURkydN_qdf_YfEuk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333934092068-07vsnr3cunrm81985abkcf3k6mhq5o8c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

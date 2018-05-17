@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Finanzly Mobile</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="create_board">Crear Tablero</string>
+    <string name="list_board">Listar Tablero</string>
+    <string-array name="options">
+        <item>@string/create_board</item>
+        <item>@string/list_board</item>
+    </string-array>
+
+    <string name="register_board">REGISTRAR TABLERO</string>
+    <string name="save">Guardar</string>
+    <string name="clear">Limpiar</string>
+    <string name="saved_board">Tablero Guardado Exitosamente!</string>
+    <string name="name">Nombre</string>
+    <string name="description">Descripcion</string>
+    <string name="cant_be_blank">El campo no debe estar vacio</string>
+    <string name="information">INFORMACION</string>
+    <string name="edit">Modificar</string>
+    <string name="delete">Eliminar</string>
+    <string name="delete_board">Eliminar Board</string>
+    <string name="are_you_sure">¿Está seguro que desea elminar a este tablero?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="edit_board">EDITAR TABLERO</string>
+    <string name="edited_board">Tablero editado Exitosamente!</string>
+    <string name="board_already_exist">Ya existe un tablero con este nombre</string>
+
+    <string name="board_reason">En este tablero podrás agregar ingresos y egresos para tener una actividad econominca especifica.</string>
+
+    <string name="total_incomes">Total Ingresos</string>
+    <string name="total_expenses">Total Egresos</string>
+    <string name="pocket">Bolsillo</string>
+    <string name="total_balance">Saldo final</string>
+</resources>
