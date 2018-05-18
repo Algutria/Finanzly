@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,7 +48,6 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
         llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
-        //adapter = new BoardAdapter.OnBoardClickListener(this.getApplicationContext(), boards, this);
 
         adapter = new BoardAdapter(this.getApplicationContext(), boards, this);
 
@@ -88,14 +88,7 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
 
     public void onBoardClick(Board b) {
         Intent i = new Intent(Principal.this, BoardDetails.class);
-        Bundle bundle = new Bundle();
-
-        bundle.putString("id", b.getId());
-        bundle.putString("name",b.getName());
-        bundle.putString("description",b.getDescription());
-        bundle.putInt("image",b.getImage());
-
-        i.putExtra("datos",bundle);
+        i.putExtra("data", b);
         startActivity(i);
     }
 }

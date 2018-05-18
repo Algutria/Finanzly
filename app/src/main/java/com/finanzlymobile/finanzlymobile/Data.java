@@ -1,5 +1,7 @@
 package com.finanzlymobile.finanzlymobile;
 
+import android.util.Log;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,6 +31,12 @@ public class Data {
     }
 
     public static void setBoards(ArrayList<Board> b){
+        //int index = 0;
+        //while (index <= 1){
+          //  for (int j = 0; j < b.size(); j++){
+            //    b.get(j);            }
+        //}
+
         boards = b;
     }
 }

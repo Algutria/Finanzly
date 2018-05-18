@@ -18,7 +18,7 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image"
+                android:id="@+id/operation_image"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center_vertical" />
@@ -47,7 +47,14 @@
                         android:textSize="18dp" />
 
                     <TextView
-                        android:id="@+id/lblDescription"
+                        android:id="@+id/lblValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/lblType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="14dp"

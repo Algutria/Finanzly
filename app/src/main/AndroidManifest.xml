@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateBoard" />
-        <activity android:name=".BoardDetails" />
+        <activity android:name=".BoardDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EditBoard"></activity>
     </application>
 
