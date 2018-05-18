@@ -7,22 +7,26 @@ class Operation implements Parcelable {
     private String id;
     private String name;
     private double value;
+    private int image;
     private Type type;
 
     public Operation(){}
 
-    public Operation(String name, double value, Type type) {
+    public Operation(String name, double value, int image, Type type) {
         this.id = id;
-
         this.name = name;
         this.value = value;
+        this.image = image;
         this.type = type;
     }
+
+    public Operation(String id){this.id = id;}
 
     protected Operation(Parcel in) {
         id = in.readString();
         name = in.readString();
         value = in.readDouble();
+        image = in.readInt();
         type = Type.valueOf(in.readString());
     }
 
@@ -44,6 +48,7 @@ class Operation implements Parcelable {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", value=" + value +
+                ", image=" + image +
                 ", type=" + type +
                 '}';
     }
@@ -80,6 +85,11 @@ class Operation implements Parcelable {
         this.value = value;
     }
 
+
+    public int getImage() { return image; }
+
+    public void setImage(int image) { this.image = image; }
+
     @Override
     public int describeContents() {
         return 0;
@@ -90,6 +100,7 @@ class Operation implements Parcelable {
         dest.writeString(id);
         dest.writeString(name);
         dest.writeDouble(value);
+        dest.writeInt(image);
         dest.writeString(type.name());
     }
 

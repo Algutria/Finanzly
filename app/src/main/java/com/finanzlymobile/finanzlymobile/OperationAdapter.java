@@ -34,6 +34,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
     public void onBindViewHolder(OperationAdapter.OperationViewHolder holder, int position) {
         final Operation op = operations.get(position);
 
+        holder.image.setImageDrawable(ResourcesCompat.getDrawable(res, op.getImage(), null));
         holder.name.setText(op.getName());
         holder.value.setText(""+op.getValue());
         holder.type.setText(""+op.getType());
@@ -48,10 +49,14 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
 
     @Override
     public int getItemCount() {
+        if(operations == null){
+            return 0;
+        }
         return operations.size();
     }
 
     public static class OperationViewHolder extends RecyclerView.ViewHolder {
+        private ImageView image;
         private TextView name;
         private TextView value;
         private TextView type;
@@ -62,6 +67,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
 
             v = itemView;
 
+            image = itemView.findViewById(R.id.image);
             name = itemView.findViewById(R.id.lblName);
             value = itemView.findViewById(R.id.lblValue);
             type = itemView.findViewById(R.id.lblType);

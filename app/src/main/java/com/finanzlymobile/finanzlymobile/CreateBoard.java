@@ -34,8 +34,10 @@ public class CreateBoard extends AppCompatActivity {
 
     public void load_images(){
         images = new ArrayList<>();
-        images.add(R.drawable.images);
-        images.add(R.drawable.important);
+        //images.add(R.drawable.images);
+        //images.add(R.drawable.important);
+        images.add(R.drawable.incomes);
+        images.add(R.drawable.expenses);
     }
 
     public void save(View v){

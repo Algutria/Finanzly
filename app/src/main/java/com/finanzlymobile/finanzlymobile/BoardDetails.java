@@ -65,7 +65,12 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         Log.w(TAG, "onCreate: " + vOperations.size() );
         vOperations = board.getOperations();
 
-        Log.w(TAG, "onCreate: " + vOperations.size() );
+        if(vOperations == null){
+            Log.w(TAG, "onCreate: " + "EMPTYYYY" );
+        }else{
+            Log.w(TAG, "onCreate: " + "TIENEEEEE" );
+        }
+
         img = board.getImage();
 
         toolbar.setTitle(vName);
@@ -76,8 +81,7 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         OperationAdapter adapter = new OperationAdapter(this.getApplicationContext(), vOperations, this);
         listing.setLayoutManager(llm);
         listing.setAdapter(adapter);
-
-
+        adapter.notifyDataSetChanged();
     }
 
     public void delete(View v){

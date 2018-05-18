@@ -28,8 +28,8 @@
 
     <string name="board_reason">En este tablero podrás agregar ingresos y egresos para tener una actividad econominca especifica.</string>
 
-    <string name="total_incomes">Total Ingresos</string>
-    <string name="total_expenses">Total Egresos</string>
+    <string name="incomes">Ingresos</string>
+    <string name="expenses">Egresos</string>
     <string name="pocket">Bolsillo</string>
     <string name="total_balance">Saldo final</string>
 </resources>

@@ -31,7 +31,112 @@
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:orientation="horizontal"></LinearLayout>
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/total1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblTotalIncomes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/incomes"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/total_incomes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:text="$1.250.000"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/total2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblTotalExpenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="@string/expenses"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/total_expenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="$950.000"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/total3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblTotalPocket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pocket"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/total_pocket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$1.050.000"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/total4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblTotalBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_balance"
+                    android:textColor="#333333"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/total_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:text="$300.000"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
 
 
         <LinearLayout
@@ -39,17 +144,18 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/banner"
             android:orientation="vertical"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:paddingTop="10dp">
 
             <TextView
                 android:id="@+id/lblDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
                 android:text="TextView"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
 
             <include layout="@layout/content_operations" />
