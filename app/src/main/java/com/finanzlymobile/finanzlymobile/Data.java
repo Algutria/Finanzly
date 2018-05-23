@@ -1,5 +1,7 @@
 package com.finanzlymobile.finanzlymobile;
 
+import android.util.Log;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -10,6 +12,7 @@ public class Data {
     private static DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
     private static ArrayList<Board> boards = new ArrayList<>();
+    private static ArrayList<Operation> operations = new ArrayList<>();
 
     public static ArrayList<Board> getBoards() {
         return boards;
@@ -30,5 +33,9 @@ public class Data {
 
     public static void setBoards(ArrayList<Board> b){
         boards = b;
+    }
+
+    public static void setOperations(ArrayList<Operation> op){
+        operations = op;
     }
 }
