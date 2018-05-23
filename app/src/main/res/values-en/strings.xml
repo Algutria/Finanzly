@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Finanzly</string>
+
+    <string name="action_settings">Settins</string>
+    <string name="boards">Boards</string>
+    <string name="create_board">Create Board</string>
+    <string name="list_board">List Boards</string>
+
+    <string name="register_board">REGISTER BOARD</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+    <string name="saved_board">Board Saved Successfully!</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="cant_be_blank">This field can not be blank</string>
+    <string name="information">INFORMATION</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_board">Delete Board</string>
+    <string name="are_you_sure">¿Are you sure you want to delete this board?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="edit_board">EDIT BOARD</string>
+    <string name="edited_board">Board edited Successfully!</string>
+    <string name="board_already_exist">Board with this name already exits</string>
+
+    <string name="board_reason">On this board you can add income or expense operations to bring a specific balance.</string>
+
+    <string name="incomes">Incomes</string>
+    <string name="expenses">Expenses</string>
+    <string name="pocket">Pocket</string>
+    <string name="total_balance">Balance</string>
+
+    <string name="welcome_title">Welcome to Finanzly</string>
+    <string name="welcome_message">The App where you can manage your finances simply and safely.</string>
+</resources>

@@ -2,22 +2,27 @@ package com.finanzlymobile.finanzlymobile;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 class Operation implements Parcelable {
+    private static final String TAG = "==============";
     private String id;
     private String name;
     private double value;
     private int image;
     private Type type;
 
+    private boolean paid;
+
     public Operation(){}
 
-    public Operation(String name, double value, int image, Type type) {
+    public Operation(String name, double value, int image, Type type, boolean paid) {
         this.id = id;
         this.name = name;
         this.value = value;
         this.image = image;
         this.type = type;
+        this.paid = paid;
     }
 
     public Operation(String id){this.id = id;}
@@ -28,6 +33,7 @@ class Operation implements Parcelable {
         value = in.readDouble();
         image = in.readInt();
         type = Type.valueOf(in.readString());
+        paid = in.readInt() != 0;
     }
 
     public static final Creator<Operation> CREATOR = new Creator<Operation>() {
@@ -50,6 +56,7 @@ class Operation implements Parcelable {
                 ", value=" + value +
                 ", image=" + image +
                 ", type=" + type +
+                ", paid=" + paid +
                 '}';
     }
 
@@ -90,6 +97,10 @@ class Operation implements Parcelable {
 
     public void setImage(int image) { this.image = image; }
 
+    public boolean isPaid() { return paid; }
+
+    public void setPaid(boolean paid) { this.paid = paid; }
+
     @Override
     public int describeContents() {
         return 0;
@@ -102,6 +113,7 @@ class Operation implements Parcelable {
         dest.writeDouble(value);
         dest.writeInt(image);
         dest.writeString(type.name());
+        dest.writeInt(paid ? 1 : 0);
     }
 
     public enum Type {

@@ -16,6 +16,14 @@ public class Board implements Parcelable {
 
     }
 
+    public Board(String id, String name, String description, int image, ArrayList<Operation> operations) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.image = image;
+        this.operations = operations;
+    }
+
     public Board(String name, String description, int image, ArrayList<Operation> operations) {
         this.name = name;
         this.description = description;

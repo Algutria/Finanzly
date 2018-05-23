@@ -5,18 +5,23 @@ import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.OperationViewHolder> {
+    private static final String TAG = "===============";
     private ArrayList<Operation> operations;
     private Resources res;
     private OperationAdapter.OnOperationClickListener clickListener;
+    private TextView lblPaid;
+    private Context context;
 
     public OperationAdapter(Context context, ArrayList<Operation> operations, OnOperationClickListener clickListener){
         this.operations = operations;
@@ -34,17 +39,28 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
     public void onBindViewHolder(OperationAdapter.OperationViewHolder holder, int position) {
         final Operation op = operations.get(position);
 
-        holder.image.setImageDrawable(ResourcesCompat.getDrawable(res, op.getImage(), null));
-        holder.name.setText(op.getName());
-        holder.value.setText(""+op.getValue());
-        holder.type.setText(""+op.getType());
+        if(op != null) {
+            holder.image.setImageDrawable(ResourcesCompat.getDrawable(res, op.getImage(), null));
+            holder.name.setText(op.getName());
 
-        holder.v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clickListener.onOperationClick(op);
+            String formattedValue = "$" + NumberFormat.getNumberInstance().format(op.getValue());
+            holder.value.setText(formattedValue);
+
+            holder.v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onOperationClick(op);
+                }
+            });
+
+            String paid = "";
+
+            if(op.getType() == Operation.Type.EXPENSE && op.isPaid()){
+                paid = "PAID";
             }
-        });
+            holder.paid.setText(paid);
+        }
+
     }
 
     @Override
@@ -60,6 +76,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
         private TextView name;
         private TextView value;
         private TextView type;
+        private TextView paid;
         private View v;
 
         public OperationViewHolder(View itemView) {
@@ -70,7 +87,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
             image = itemView.findViewById(R.id.image);
             name = itemView.findViewById(R.id.lblName);
             value = itemView.findViewById(R.id.lblValue);
-            type = itemView.findViewById(R.id.lblType);
+            paid = itemView.findViewById(R.id.lblPaid);
         }
     }
 
