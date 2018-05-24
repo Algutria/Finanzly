@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,7 +21,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class BoardDetails extends AppCompatActivity implements OperationAdapter.OnOperationClickListener {
-    private static final String TAG = "=====================";
+    private static final String TAG = "========";
     private Toolbar toolbar;
     private Board board;
     private String vName, id, vDescription;
@@ -31,11 +32,14 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
     private ImageView image;
     private Resources res;
     private TextView name, description, totalIncomes, totalExpenses, totalPocket, totalBalance;
+    private LinearLayout emptyStateBoards;
 
-    private double incomes = 0, expenses = 0;
+    private double incomes = 0, expenses = 0, totalPocketValue  = 0;
 
     private RecyclerView listing;
     private LinearLayoutManager llm;
+
+    private OperationAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,7 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         totalExpenses = findViewById(R.id.total_expenses);
         totalPocket = findViewById(R.id.total_pocket);
         totalBalance = findViewById(R.id.total_balance);
+        emptyStateBoards = findViewById(R.id.empty_state_boards);
 
         listing = findViewById(R.id.lstOperations);
         llm = new LinearLayoutManager(this);
@@ -66,6 +71,8 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         vDescription = board.getDescription();
         vOperations = board.getOperations();
 
+        board.setOperations(vOperations);
+
         img = board.getImage();
 
         toolbar.setTitle(vName);
@@ -73,13 +80,22 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
 
         description.setText(vDescription);
 
-        OperationAdapter adapter = new OperationAdapter(this.getApplicationContext(), vOperations, this);
+        adapter = new OperationAdapter(this.getApplicationContext(), vOperations, this);
+        adapter.notifyDataSetChanged();
+
         listing.setLayoutManager(llm);
         listing.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-        double totalPocketValue  = 0;
 
+
+        listing.setVisibility(View.GONE);
+        emptyStateBoards.setVisibility(View.GONE);
+
+        setTotals();
+    }
+
+    private void setTotals() {
         if(vOperations != null){
+            listing.setVisibility(View.VISIBLE);
             for (int i = 0; i < vOperations.size(); i++){
                 if(vOperations.get(i) != null) {
                     if (vOperations.get(i).getType() == Operation.Type.INCOME) {
@@ -96,6 +112,8 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
                     }
                 }
             }
+        }else{
+            emptyStateBoards.setVisibility(View.VISIBLE);
         }
 
         totalIncomes.setText(numberToCurrency(incomes));
@@ -105,29 +123,12 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         totalBalance.setText(numberToCurrency(balance));
 
         totalPocket.setText(numberToCurrency(incomes - totalPocketValue));
-
-        ImageView newIncome = findViewById(R.id.new_income);
-        ImageView newExpense = findViewById(R.id.new_expense);
-
-        newIncome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendToOperations(Operation.Type.EXPENSE);
-            }
-        });
-
-        newExpense.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendToOperations(Operation.Type.INCOME);
-            }
-        });
     }
 
-    public void sendToOperations(Operation.Type type){
+    public void sendToOperations(View v){
         Intent i = new Intent(BoardDetails.this, CreateOperation.class);
-        i.putExtra("type", type);
         i.putExtra("boardId", board.getId());
+        i.putExtra("boardName", board.getName());
 
         startActivity(i);
     }
@@ -183,5 +184,14 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         Intent i = new Intent(BoardDetails.this, Principal.class);
         i.putExtra("data", op);
         startActivity(i);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        vOperations = Data.getOperations(board.getId());
+
+        adapter.setOperations(vOperations);
+        adapter.notifyDataSetChanged();
     }
 }

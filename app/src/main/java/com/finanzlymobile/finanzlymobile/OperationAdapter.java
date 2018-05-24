@@ -56,7 +56,7 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
             String paid = "";
 
             if(op.getType() == Operation.Type.EXPENSE && op.isPaid()){
-                paid = "PAID";
+                paid = res.getString(R.string.paid);
             }
             holder.paid.setText(paid);
         }
@@ -93,5 +93,9 @@ public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.Oper
 
     public interface OnOperationClickListener {
         void onOperationClick(Operation op);
+    }
+
+    public void setOperations(ArrayList<Operation> operations){
+        this.operations = operations;
     }
 }

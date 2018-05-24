@@ -34,4 +34,19 @@
 
     <string name="welcome_title">Welcome to Finanzly</string>
     <string name="welcome_message">The App where you can manage your finances simply and safely.</string>
+
+    <string name="terminology">Terminology</string>
+    <string name="about_us">About Us</string>
+    <string name="logout">Logout</string>
+    <string name="create_operation">Create Operation</string>
+    <string name="register_operation">REGISTER OPERATION</string>
+    <string name="value">Value</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    <string name="saved_operation">Operation saved Successfully!</string>
+    <string name="is_paid">Is paid?</string>
+
+    <string name="operation_description">This operation is saved on board:</string>
+    <string name="value_greater_than_zero">Value should be greater than zero</string>
+    <string name="paid">PAID</string>
 </resources>

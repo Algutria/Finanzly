@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +33,7 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
     private final String BD = "Boards";
     private FloatingActionButton fab;
     private LinearLayout emptyState;
+    private TextView boardsTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,9 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
         listing.setVisibility(View.INVISIBLE);
         fab.setVisibility(View.INVISIBLE);
         emptyState.setVisibility(View.INVISIBLE);
+
+        boardsTitle = findViewById(R.id.boards_title);
+        boardsTitle.setVisibility(View.INVISIBLE);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.child(BD).addValueEventListener(new ValueEventListener() {
@@ -78,6 +83,7 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
                     emptyState.setVisibility(View.INVISIBLE);
                     listing.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.VISIBLE);
+                    boardsTitle.setVisibility(View.VISIBLE);
                 }
             }
 

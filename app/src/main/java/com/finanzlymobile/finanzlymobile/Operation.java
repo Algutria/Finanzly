@@ -101,6 +101,11 @@ class Operation implements Parcelable {
 
     public void setPaid(boolean paid) { this.paid = paid; }
 
+    public void save(String boardId){Data.saveOperation(this, boardId);}
+    public void edit(){Data.editOperation(this);}
+    public void delete(){Data.deleteOperation(this);}
+
+
     @Override
     public int describeContents() {
         return 0;

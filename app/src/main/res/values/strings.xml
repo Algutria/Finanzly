@@ -40,4 +40,21 @@
     <string name="terminology">Terminologia</string>
     <string name="about_us">Sobre Nosotros</string>
     <string name="logout">Salir</string>
+    <string name="create_operation">Crear Operacion</string>
+    <string name="register_operation">REGISTRAR OPERACION</string>
+    <string name="value">Valor</string>
+    <string name="income">Ingreso</string>
+    <string name="expense">Egreso</string>
+    <string name="saved_operation">Operacion guardada Exitosamente!</string>
+    <string name="is_paid">Esta pago?</string>
+
+    <string name="operation_description">Esta operacion sera almacenada en el tablero de:</string>
+    <string name="value_greater_than_zero">El valor debe ser mayor que cero</string>
+    <string name="paid">PAGO</string>
+
+    <string-array name="operation_types">
+        <item>@string/income</item>
+        <item>@string/expense</item>
+    </string-array>
+
 </resources>
