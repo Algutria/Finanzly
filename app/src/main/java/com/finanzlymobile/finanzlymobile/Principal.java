@@ -135,4 +135,14 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void toGoTerminology(View v){
+        i = new Intent(Principal.this, Terminology.class);
+        startActivity(i);
+    }
+
+    public void toGoAboutUs(View v){
+        i = new Intent(Principal.this, AboutUs.class);
+        startActivity(i);
+    }
 }

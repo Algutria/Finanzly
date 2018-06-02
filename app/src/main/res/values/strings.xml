@@ -58,6 +58,35 @@
     <string name="edit_operation">EDITAR OPERACION</string>
     <string name="edited_operation">Operacion editada exitosamente!</string>
 
+    <string name="what_is_a_board">Es un contenedor para llevar operaciones. Es como llevar tus personales en un cuaderno, se
+    anota un nombre de referencia y una descripcion.
+        Cada tablero tendrá operaciones ingresadas por el usuario.</string>
+    <string name="board">Tablero</string>
+    <string name="operation">Operacion</string>
+
+    <string name="what_is_a_operation">
+        Es un ingreso o egreso de dinero que registras en un tablero.
+        Estos afectan el balance general de dicho tablero.
+    </string>
+
+    <string name="what_is_a_income">
+        Es el dinero que registras en un tablero de tipo ingreso.
+    </string>
+
+    <string name="what_is_a_expense">
+        Es el dinero que registras en un tablero de tipo egreso.
+    </string>
+
+    <string name="what_is_a_pocket">
+        Total de ingresos menos los egresos que has pagado.
+    </string>
+
+    <string name="what_is_a_balance">
+        Total de ingresos menos total de egresos.
+    </string>
+    <string name="web_developer">Desarrollador Web en Wawandco</string>
+    <string name="technical_leader">Lider Tecnico en Wawandco</string>
+
     <string-array name="operation_types">
         <item>@string/income</item>
         <item>@string/expense</item>
