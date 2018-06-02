@@ -55,6 +55,8 @@
     <string name="type">Tipo</string>
     <string name="delete_operacion">Eliminar Operacion</string>
     <string name="are_you_sure_operation">¿Está seguro que desea eliminar esta operacion?</string>
+    <string name="edit_operation">EDITAR OPERACION</string>
+    <string name="edited_operation">Operacion editada exitosamente!</string>
 
     <string-array name="operation_types">
         <item>@string/income</item>

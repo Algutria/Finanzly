@@ -24,8 +24,8 @@ public class OperationDetails extends AppCompatActivity {
     private boolean vIsPaid;
     private String operationPaid;
 
-    //private int img;
-    //private ImageView image;
+    private int img;
+    private ImageView image;
 
     private Bundle bundle;
     private Intent i;
@@ -51,6 +51,9 @@ public class OperationDetails extends AppCompatActivity {
         i = getIntent();
         operation = i.getParcelableExtra("data");
         board = i.getParcelableExtra("board");
+
+        image = findViewById(R.id.image);
+        image.setImageResource(operation.getImage());
 
         id = operation.getId();
         vName = operation.getName();
@@ -89,11 +92,7 @@ public class OperationDetails extends AppCompatActivity {
         builder.setPositiveButton(positiveAns, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Operation op = new Operation(id);
-
-                Log.w(TAG, "onCreate: " + board.getId().toString());
-
-                op.delete(board.getId());
+                operation.delete(board.getId());
                 onBackPressed();
             }
         });
@@ -107,6 +106,14 @@ public class OperationDetails extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    public void edit(View v){
+        Intent i = new Intent(OperationDetails.this, EditOperation.class);
+        i.putExtra("data", operation);
+        i.putExtra("board", board);
+
+        startActivity(i);
     }
 
     public void onBackPressed(){

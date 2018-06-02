@@ -25,7 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EditBoard" />
         <activity android:name=".CreateOperation" />
-        <activity android:name=".OperationDetails"></activity>
+        <activity android:name=".OperationDetails" />
+        <activity android:name=".EditOperation"></activity>
     </application>
 
 </manifest>

@@ -111,7 +111,6 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
     public void onBoardClick(Board b) {
         Intent i = new Intent(Principal.this, BoardDetails.class);
         i.putExtra("data", b);
-        Log.w(TAG, "onOperationClick: " + b.toString() );
         startActivity(i);
     }
 
