@@ -21,7 +21,6 @@ import java.util.ArrayList;
 
 public class CreateOperation extends AppCompatActivity {
 
-    private static final String TAG = "====================";
     private String[] operations;
     private Spinner types;
     private EditText txtName, txtValue;
@@ -97,11 +96,9 @@ public class CreateOperation extends AppCompatActivity {
         boolean paid = false;
 
         if(types.getSelectedItemPosition() == 1){
-            Log.w(TAG, "save: " + "ENTROOOOOO" );
             opType = Operation.Type.EXPENSE;
             selectedImage = expenseImg;
             paid = paidYes.isChecked();
-            Log.w(TAG, "save: " + paid );
         }
 
         if(isValid()) {

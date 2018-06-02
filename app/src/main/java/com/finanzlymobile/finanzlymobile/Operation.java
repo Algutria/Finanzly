@@ -103,7 +103,11 @@ class Operation implements Parcelable {
 
     public void save(String boardId){Data.saveOperation(this, boardId);}
     public void edit(){Data.editOperation(this);}
-    public void delete(){Data.deleteOperation(this);}
+    public void delete(String boardId){
+
+        Log.w(TAG, "delete: " + boardId );
+        Data.deleteOperation(this, boardId);
+    }
 
 
     @Override

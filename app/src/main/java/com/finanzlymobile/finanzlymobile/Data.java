@@ -6,8 +6,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Data {
+    private static final String TAG = "FINAL BOARD ID";
     private static String db = "Boards";
     private static String opDB = "operations";
     private static DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -41,6 +43,7 @@ public class Data {
     }
 
     public static void editBoard(Board b){
+        Log.w(TAG, "editBoard: " + b.toString() );
         databaseReference.child(db).child(b.getId()).setValue(b);
     }
 
@@ -54,11 +57,13 @@ public class Data {
             if(boards.get(i).getId().equals(boardId)){
                 if(boards.get(i).getOperations() != null){
                     id = boards.get(i).getOperations().size();
-
+                    operation.setId(id+"");
                     boards.get(i).getOperations().add(operation);
                 }
             }
         }
+
+        operation.setId(id+"");
 
         databaseReference.child(db).child(boardId).child(opDB).child(""+id).setValue(operation);
     }
@@ -66,6 +71,7 @@ public class Data {
     public static void editOperation(Operation operation) {
     }
 
-    public static void deleteOperation(Operation operation) {
+    public static void deleteOperation(Operation operation, String boardId) {
+        databaseReference.child(db).child(boardId).child(opDB).child(operation.getId()).removeValue();
     }
 }

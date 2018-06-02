@@ -47,11 +47,26 @@
 
     </android.support.design.widget.TextInputLayout>
 
-    <Spinner
-        android:id="@+id/cmbType"
+    <LinearLayout
+        android:id="@+id/type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:layout_marginBottom="3dp"
+            android:textSize="14dp" />
+
+        <Spinner
+            android:id="@+id/cmbType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/is_paid_radios_wrapper"
@@ -68,8 +83,8 @@
         <RadioGroup
             android:id="@+id/is_paid_radios"
             android:layout_width="fill_parent"
-            android:layout_marginBottom="25dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -115,9 +130,9 @@
         android:id="@+id/operation_reason"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:lineSpacingMultiplier="1.2"
         android:lineSpacingExtra="1dp"
+        android:lineSpacingMultiplier="1.2"
+        android:textAlignment="center"
         android:textSize="16dp" />
 
 </LinearLayout>

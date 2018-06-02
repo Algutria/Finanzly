@@ -24,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoardClickListener{
+    private static final String TAG = "BOARD CLICK";
     private RecyclerView listing;
     private ArrayList<Board> boards = new ArrayList<>();
     private BoardAdapter adapter;
@@ -110,6 +111,7 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
     public void onBoardClick(Board b) {
         Intent i = new Intent(Principal.this, BoardDetails.class);
         i.putExtra("data", b);
+        Log.w(TAG, "onOperationClick: " + b.toString() );
         startActivity(i);
     }
 

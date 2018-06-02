@@ -20,7 +20,7 @@
     <string name="edit">Editar</string>
     <string name="delete">Eliminar</string>
     <string name="delete_board">Eliminar Tablero</string>
-    <string name="are_you_sure">¿Está seguro que desea elminar a este tablero?</string>
+    <string name="are_you_sure">¿Está seguro que desea eliminar este tablero?</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
     <string name="edit_board">EDITAR TABLERO</string>
@@ -51,6 +51,10 @@
     <string name="operation_description">Esta operacion sera almacenada en el tablero de:</string>
     <string name="value_greater_than_zero">El valor debe ser mayor que cero</string>
     <string name="paid">PAGO</string>
+    <string name="operation_details">DETALLES DE OPERACION</string>
+    <string name="type">Tipo</string>
+    <string name="delete_operacion">Eliminar Operacion</string>
+    <string name="are_you_sure_operation">¿Está seguro que desea eliminar esta operacion?</string>
 
     <string-array name="operation_types">
         <item>@string/income</item>

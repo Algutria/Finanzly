@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,10 +14,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class EditBoard extends AppCompatActivity {
+    private static final String TAG = "AQUIIIII";
     private EditText txtNameEdit, txtDescriptionEdit;
     private TextInputLayout lblNameEdit, lblDescriptionEdit;
     private Resources res;
-    private Bundle bundle;
     private Intent i;
     private int image;
     private String id, name, description;
@@ -37,8 +38,7 @@ public class EditBoard extends AppCompatActivity {
         res = this.getResources();
 
         i = getIntent();
-        bundle = i.getBundleExtra("data");
-        board = (Board) i.getParcelableExtra("data");
+        board = i.getParcelableExtra("data");
 
         id = board.getId();
         name = board.getName();
@@ -56,6 +56,8 @@ public class EditBoard extends AppCompatActivity {
 
         if (isValid()){
             newBoard = new Board(id, nameValue, descriptionValue, image, operations);
+            Log.w(TAG, "edit: " + operations.toString() );
+
             newBoard.edit();
             Snackbar.make(v, res.getString(R.string.edited_board), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();

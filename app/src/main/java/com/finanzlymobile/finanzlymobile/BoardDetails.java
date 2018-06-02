@@ -17,11 +17,14 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
+
 import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class BoardDetails extends AppCompatActivity implements OperationAdapter.OnOperationClickListener {
-    private static final String TAG = "========";
+    private static final String TAG = "BOARD === ANTES DE ";
     private Toolbar toolbar;
     private Board board;
     private String vName, id, vDescription;
@@ -33,7 +36,6 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
     private Resources res;
     private TextView name, description, totalIncomes, totalExpenses, totalPocket, totalBalance;
     private LinearLayout emptyStateBoards;
-
     private double incomes = 0, expenses = 0, totalPocketValue  = 0;
 
     private RecyclerView listing;
@@ -76,8 +78,6 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         img = board.getImage();
 
         toolbar.setTitle(vName);
-        //image.setImageDrawable(ResourcesCompat.getDrawable(res,img,null));
-
         description.setText(vDescription);
 
         adapter = new OperationAdapter(this.getApplicationContext(), vOperations, this);
@@ -96,6 +96,11 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
     private void setTotals() {
         if(vOperations != null){
             listing.setVisibility(View.VISIBLE);
+
+            if (vOperations.size() > 0) {
+                emptyStateBoards.setVisibility(View.GONE);
+            }
+
             for (int i = 0; i < vOperations.size(); i++){
                 if(vOperations.get(i) != null) {
                     if (vOperations.get(i).getType() == Operation.Type.INCOME) {
@@ -137,6 +142,7 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         String formattedValue = "$" + NumberFormat.getNumberInstance().format(value);
         return formattedValue;
     }
+
     public void delete(View v){
         String positiveAns, negativeAns;
 
@@ -181,8 +187,9 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
 
     @Override
     public void onOperationClick(Operation op) {
-        Intent i = new Intent(BoardDetails.this, Principal.class);
+        Intent i = new Intent(BoardDetails.this, OperationDetails.class);
         i.putExtra("data", op);
+        i.putExtra("board", board);
         startActivity(i);
     }
 
@@ -193,5 +200,6 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
 
         adapter.setOperations(vOperations);
         adapter.notifyDataSetChanged();
+        setTotals();
     }
 }
