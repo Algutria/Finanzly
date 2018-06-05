@@ -49,4 +49,63 @@
     <string name="operation_description">This operation is saved on board:</string>
     <string name="value_greater_than_zero">Value should be greater than zero</string>
     <string name="paid">PAID</string>
+
+    <string name="operation_details">OPERATION DETAILS</string>
+    <string name="type">Type</string>
+    <string name="delete_operacion">Delete Operation</string>
+    <string name="are_you_sure_operation">¿Are you sure you want to delete this operation?</string>
+    <string name="edit_operation">EDIT OPERATION</string>
+    <string name="edited_operation">Operation edited successfully!</string>
+
+    <string name="what_is_a_board">It is a container to keep track operations. It is like have personlas finances in a notebook,
+    anota un nombre de referencia y una descripcion.
+        Each board will have operations created by the user.</string>
+    <string name="board">Board</string>
+    <string name="operation">Operation</string>
+
+    <string name="what_is_a_operation">
+        It is a income or expense of money that user registers in a board.
+        They affect the general balance for that particular board.
+    </string>
+
+    <string name="what_is_a_income">
+        Money type income that user registers in a board.
+    </string>
+
+    <string name="what_is_a_expense">
+        Money type expense that user registers in a board.
+    </string>
+
+    <string name="what_is_a_pocket">
+        Total of incomes less expenses that you already paid.
+    </string>
+
+    <string name="what_is_a_balance">
+        Total of incomes less total of expenses.
+    </string>
+    <string name="web_developer">Developer at Wawandco</string>
+    <string name="technical_leader">Technical Leader at Wawandco</string>
+
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="title_activity_sign_up">Sign up</string>
+    <string name="action_sign_up">Create Account</string>
+    <string name="already_have_account"><u>I already have an account</u></string>
+    <string name="action_login">LOGIN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="dont_have_account"><u>I don\'t have an account</u></string>
+    <string name="sign_up_low">Sign Up</string>
+    <string name="about_andres">9th semester student of Systems Engineering at the Universidad de la Costa</string>
+    <string name="about_andres_github">Github: <b>amartine59</b></string>
+    <string name="about_bryan_github">Github <b>algutria</b></string>
 </resources>

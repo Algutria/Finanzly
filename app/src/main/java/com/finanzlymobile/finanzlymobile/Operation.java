@@ -17,6 +17,14 @@ class Operation implements Parcelable {
     public Operation(){}
 
     public Operation(String name, double value, int image, Type type, boolean paid) {
+        this.name = name;
+        this.value = value;
+        this.image = image;
+        this.type = type;
+        this.paid = paid;
+    }
+
+    public Operation(String id, String name, double value, int image, Type type, boolean paid) {
         this.id = id;
         this.name = name;
         this.value = value;
@@ -102,12 +110,8 @@ class Operation implements Parcelable {
     public void setPaid(boolean paid) { this.paid = paid; }
 
     public void save(String boardId){Data.saveOperation(this, boardId);}
-    public void edit(){Data.editOperation(this);}
-    public void delete(String boardId){
-
-        Log.w(TAG, "delete: " + boardId );
-        Data.deleteOperation(this, boardId);
-    }
+    public void edit(String boardId){Data.editOperation(this, boardId);}
+    public void delete(String boardId){ Data.deleteOperation(this, boardId); }
 
 
     @Override

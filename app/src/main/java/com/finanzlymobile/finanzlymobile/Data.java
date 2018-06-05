@@ -2,6 +2,7 @@ package com.finanzlymobile.finanzlymobile;
 
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -9,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Data {
-    private static final String TAG = "FINAL BOARD ID";
-    private static String db = "Boards";
+    private static final String TAG = "HEREEEREREREE";
+    private static String db = FirebaseAuth.getInstance().getUid();
     private static String opDB = "operations";
     private static DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -43,7 +44,6 @@ public class Data {
     }
 
     public static void editBoard(Board b){
-        Log.w(TAG, "editBoard: " + b.toString() );
         databaseReference.child(db).child(b.getId()).setValue(b);
     }
 
@@ -68,7 +68,9 @@ public class Data {
         databaseReference.child(db).child(boardId).child(opDB).child(""+id).setValue(operation);
     }
 
-    public static void editOperation(Operation operation) {
+    public static void editOperation(Operation operation, String boardId) {
+        Log.w(TAG, "editOperation: "+ operation.toString() + boardId );
+        databaseReference.child(db).child(boardId).child(opDB).child(operation.getId()).setValue(operation);
     }
 
     public static void deleteOperation(Operation operation, String boardId) {

@@ -55,10 +55,65 @@
     <string name="type">Tipo</string>
     <string name="delete_operacion">Eliminar Operacion</string>
     <string name="are_you_sure_operation">¿Está seguro que desea eliminar esta operacion?</string>
+    <string name="edit_operation">EDITAR OPERACION</string>
+    <string name="edited_operation">Operacion editada exitosamente!</string>
+
+    <string name="what_is_a_board">Es un contenedor para llevar operaciones. Es como llevar tus personales en un cuaderno, se
+    anota un nombre de referencia y una descripcion.
+        Cada tablero tendrá operaciones ingresadas por el usuario.</string>
+    <string name="board">Tablero</string>
+    <string name="operation">Operacion</string>
+
+    <string name="what_is_a_operation">
+        Es un ingreso o egreso de dinero que registras en un tablero.
+        Estos afectan el balance general de dicho tablero.
+    </string>
+
+    <string name="what_is_a_income">
+        Es el dinero que registras en un tablero de tipo ingreso.
+    </string>
+
+    <string name="what_is_a_expense">
+        Es el dinero que registras en un tablero de tipo egreso.
+    </string>
+
+    <string name="what_is_a_pocket">
+        Total de ingresos menos los egresos que has pagado.
+    </string>
+
+    <string name="what_is_a_balance">
+        Total de ingresos menos total de egresos.
+    </string>
+    <string name="web_developer">Desarrollador en Wawandco</string>
+    <string name="technical_leader">Lider Tecnico en Wawandco</string>
 
     <string-array name="operation_types">
         <item>@string/income</item>
         <item>@string/expense</item>
     </string-array>
+    <string name="title_activity_login">Login</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login o registrate</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_invalid_email">Email invalido</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">Esta contraseña es incorrecta</string>
+    <string name="error_field_required">Campo requerido</string>
+    <string name="permission_rationale">"Error de permiso, por favor contactanos"</string>
+    <string name="title_activity_sign_up">Registrate</string>
+    <string name="action_sign_up">Crear Cuenta</string>
+    <string name="already_have_account"><u>Ya tengo una cuenta</u></string>
+    <string name="action_login">INGRESAR</string>
+    <string name="sign_up">REGISTRO</string>
+    <string name="dont_have_account"><u>No tengo una cuenta aun</u></string>
+    <string name="sign_up_low">Registro</string>
+    <string name="about_andres">Estudiante de 9vo semestre de Ingenieria de Sistemas de la Universidad de la Costa</string>
+    <string name="about_andres_job">Desarrollador en Wawandco</string>
+    <string name="about_andres_github">Github: <b>amartine59</b></string>
+    <string name="about_bryan_job">Lider Tecnico en Wawandco</string>
+    <string name="about_bryan_github">Github <b>algutria</b></string>
 
 </resources>

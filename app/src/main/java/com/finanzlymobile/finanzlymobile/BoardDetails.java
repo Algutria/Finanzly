@@ -198,6 +198,8 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         super.onResume();
         vOperations = Data.getOperations(board.getId());
 
+        Log.w(TAG, "onResume: " + vOperations.toString() );
+
         adapter.setOperations(vOperations);
         adapter.notifyDataSetChanged();
         setTotals();

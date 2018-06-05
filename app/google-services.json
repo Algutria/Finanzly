@@ -15,12 +15,24 @@
       },
       "oauth_client": [
         {
+          "client_id": "333934092068-ga6lsr2jnhf51na346j3160kdcrkssl4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finanzlymobile.finanzlymobile",
+            "certificate_hash": "aca020756bf1bb20f76236602dc3eb6bf0931a29"
+          }
+        },
+        {
           "client_id": "333934092068-a9rpgpq6prg2fdhq9rrbqk59th1nn43d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.finanzlymobile.finanzlymobile",
             "certificate_hash": "4926caa21bffb8f53144cd5ac532fafcf118ae45"
           }
+        },
+        {
+          "client_id": "333934092068-07vsnr3cunrm81985abkcf3k6mhq5o8c.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "333934092068-07vsnr3cunrm81985abkcf3k6mhq5o8c.apps.googleusercontent.com",
