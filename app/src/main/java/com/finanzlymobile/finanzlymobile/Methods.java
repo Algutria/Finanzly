@@ -1,5 +1,6 @@
 package com.finanzlymobile.finanzlymobile;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -30,5 +31,10 @@ public class Methods {
             }
         }
         return false;
+    }
+
+    public static String numberToCurrency(double value){
+        String formattedValue = "$" + NumberFormat.getNumberInstance().format(value);
+        return formattedValue;
     }
 }

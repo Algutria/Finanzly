@@ -25,7 +25,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoardClickListener{
-    private static final String TAG = "BOARD CLICK";
     private RecyclerView listing;
     private ArrayList<Board> boards = new ArrayList<>();
     private BoardAdapter adapter;

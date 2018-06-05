@@ -16,7 +16,6 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class OperationAdapter extends RecyclerView.Adapter<OperationAdapter.OperationViewHolder> {
-    private static final String TAG = "===============";
     private ArrayList<Operation> operations;
     private Resources res;
     private OperationAdapter.OnOperationClickListener clickListener;

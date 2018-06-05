@@ -24,7 +24,6 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class BoardDetails extends AppCompatActivity implements OperationAdapter.OnOperationClickListener {
-    private static final String TAG = "BOARD === ANTES DE ";
     private Toolbar toolbar;
     private Board board;
     private String vName, id, vDescription;
@@ -121,13 +120,13 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
             emptyStateBoards.setVisibility(View.VISIBLE);
         }
 
-        totalIncomes.setText(numberToCurrency(incomes));
-        totalExpenses.setText(numberToCurrency(expenses));
+        totalIncomes.setText(Methods.numberToCurrency(incomes));
+        totalExpenses.setText(Methods.numberToCurrency(expenses));
 
         double balance= incomes - expenses;
-        totalBalance.setText(numberToCurrency(balance));
+        totalBalance.setText(Methods.numberToCurrency(balance));
 
-        totalPocket.setText(numberToCurrency(incomes - totalPocketValue));
+        totalPocket.setText(Methods.numberToCurrency(incomes - totalPocketValue));
     }
 
     public void sendToOperations(View v){
@@ -136,11 +135,6 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
         i.putExtra("boardName", board.getName());
 
         startActivity(i);
-    }
-
-    public String numberToCurrency(double value){
-        String formattedValue = "$" + NumberFormat.getNumberInstance().format(value);
-        return formattedValue;
     }
 
     public void delete(View v){
@@ -197,8 +191,6 @@ public class BoardDetails extends AppCompatActivity implements OperationAdapter.
     public void onResume() {
         super.onResume();
         vOperations = Data.getOperations(board.getId());
-
-        Log.w(TAG, "onResume: " + vOperations.toString() );
 
         adapter.setOperations(vOperations);
         adapter.notifyDataSetChanged();
