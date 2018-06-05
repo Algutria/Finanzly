@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +13,7 @@
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="35dp"
         android:text="@string/about_us"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -21,7 +21,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="45dp"
         android:orientation="vertical">
 
         <TextView
@@ -29,7 +29,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:textStyle="bold"
             android:text="Andres Martinez"
             android:textSize="16dp" />
 
@@ -37,13 +36,21 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/about_andres" />
+
+        <TextView
+            android:id="@+id/textView80"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="@string/web_developer" />
 
         <TextView
-            android:id="@+id/textView100"
+            android:id="@+id/textView81"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="amartinez12" />
+            android:text="@string/about_andres_github" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,25 +60,31 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/textView71"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:textStyle="bold"
             android:text="Bryan Algutria"
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/textView82"
+            android:id="@+id/textView38"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/web_developer" />
+            android:layout_marginBottom="5dp"
+            android:text="@string/about_andres" />
 
         <TextView
-            android:id="@+id/textView1030"
+            android:id="@+id/textView801"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="amartinez12" />
-    </LinearLayout>
+            android:layout_marginBottom="5dp"
+            android:text="@string/technical_leader" />
 
+        <TextView
+            android:id="@+id/textView831"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_bryan_github" />
+    </LinearLayout>
 </LinearLayout>

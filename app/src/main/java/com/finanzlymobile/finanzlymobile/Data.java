@@ -2,6 +2,7 @@ package com.finanzlymobile.finanzlymobile;
 
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -10,7 +11,7 @@ import java.util.Arrays;
 
 public class Data {
     private static final String TAG = "HEREEEREREREE";
-    private static String db = "Boards";
+    private static String db = FirebaseAuth.getInstance().getUid();
     private static String opDB = "operations";
     private static DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 

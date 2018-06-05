@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +32,7 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
     private LinearLayoutManager llm;
     private Intent i;
     private DatabaseReference databaseReference;
-    private final String BD = "Boards";
+    private final String BD = FirebaseAuth.getInstance().getUid();
     private FloatingActionButton fab;
     private LinearLayout emptyState;
     private TextView boardsTitle;
@@ -126,23 +127,21 @@ public class Principal extends AppCompatActivity implements  BoardAdapter.OnBoar
 
         switch(id){
             case R.id.termonology:
+                i = new Intent(Principal.this, Terminology.class);
+                startActivity(i);
                 return true;
             case R.id.about_us:
+                i = new Intent(Principal.this, AboutUs.class);
+                startActivity(i);
                 return true;
             case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                i = new Intent(Principal.this, InitActivity.class);
+                startActivity(i);
+                finish();
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void toGoTerminology(View v){
-        i = new Intent(Principal.this, Terminology.class);
-        startActivity(i);
-    }
-
-    public void toGoAboutUs(View v){
-        i = new Intent(Principal.this, AboutUs.class);
-        startActivity(i);
     }
 }

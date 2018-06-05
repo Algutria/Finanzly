@@ -3,7 +3,8 @@
     <color name="colorPrimary">#16a085</color>
     <color name="colorPrimaryDark">#138a73</color>
     <color name="colorPrimaryLight">#DCEDC8</color>
-    <color name="colorAccent">#FF5252</color>
+    <color name="colorDanger">#FF5252</color>
+    <color name="colorAccent">#16a085</color>
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryText">#757575</color>
     <color name="icons">#212121</color>

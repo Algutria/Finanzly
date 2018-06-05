@@ -83,6 +83,29 @@
     <string name="what_is_a_balance">
         Total of incomes less total of expenses.
     </string>
-    <string name="web_developer">Web Developer at Wawandco</string>
+    <string name="web_developer">Developer at Wawandco</string>
     <string name="technical_leader">Technical Leader at Wawandco</string>
+
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="title_activity_sign_up">Sign up</string>
+    <string name="action_sign_up">Create Account</string>
+    <string name="already_have_account"><u>I already have an account</u></string>
+    <string name="action_login">LOGIN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="dont_have_account"><u>I don\'t have an account</u></string>
+    <string name="sign_up_low">Sign Up</string>
+    <string name="about_andres">9th semester student of Systems Engineering at the Universidad de la Costa</string>
+    <string name="about_andres_github">Github: <b>amartine59</b></string>
+    <string name="about_bryan_github">Github <b>algutria</b></string>
 </resources>
