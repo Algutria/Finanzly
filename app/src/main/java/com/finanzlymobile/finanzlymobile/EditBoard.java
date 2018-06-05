@@ -14,7 +14,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class EditBoard extends AppCompatActivity {
-    private static final String TAG = "AQUIIIII";
     private EditText txtNameEdit, txtDescriptionEdit;
     private TextInputLayout lblNameEdit, lblDescriptionEdit;
     private Resources res;
@@ -56,8 +55,6 @@ public class EditBoard extends AppCompatActivity {
 
         if (isValid()){
             newBoard = new Board(id, nameValue, descriptionValue, image, operations);
-            Log.w(TAG, "edit: " + operations.toString() );
-
             newBoard.edit();
             Snackbar.make(v, res.getString(R.string.edited_board), Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();

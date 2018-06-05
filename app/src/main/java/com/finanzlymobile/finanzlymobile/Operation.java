@@ -5,7 +5,6 @@ import android.os.Parcelable;
 import android.util.Log;
 
 class Operation implements Parcelable {
-    private static final String TAG = "==============";
     private String id;
     private String name;
     private double value;

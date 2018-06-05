@@ -16,7 +16,6 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class OperationDetails extends AppCompatActivity {
-    private static final String TAG = "BOARD ===== DELETE";
     private Board board;
     private Operation operation;
     private String vName, id, vType;
@@ -71,13 +70,8 @@ public class OperationDetails extends AppCompatActivity {
         }
 
         lblName.setText(vName);
-        lblValue.setText(numberToCurrency(vValue));
+        lblValue.setText(Methods.numberToCurrency(vValue));
         lblType.setText(vType);
-    }
-
-    public String numberToCurrency(double value) {
-        String formattedValue = "$" + NumberFormat.getNumberInstance().format(value);
-        return formattedValue;
     }
 
     public void delete(View v){

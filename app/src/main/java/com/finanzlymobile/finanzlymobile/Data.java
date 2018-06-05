@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Data {
-    private static final String TAG = "HEREEEREREREE";
     private static String db = FirebaseAuth.getInstance().getUid();
     private static String opDB = "operations";
     private static DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -69,7 +68,6 @@ public class Data {
     }
 
     public static void editOperation(Operation operation, String boardId) {
-        Log.w(TAG, "editOperation: "+ operation.toString() + boardId );
         databaseReference.child(db).child(boardId).child(opDB).child(operation.getId()).setValue(operation);
     }
 
